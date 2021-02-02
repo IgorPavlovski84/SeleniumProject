@@ -1,27 +1,25 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.RegisterNewUserPage;
-import pages.RegisterPage;
+import pages.NavigateToRegisterPage;
 
 import java.util.concurrent.TimeUnit;
 
 
-public class RegisterPageTest {
+public class RegisterNewUserPageTest {
 
     String pageURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
 
     WebDriver driver;
 
-    RegisterPage regPage;
+    NavigateToRegisterPage regPage;
 
     RegisterNewUserPage newUser;
 
@@ -42,7 +40,7 @@ public class RegisterPageTest {
     public void testEnterEmailAndCreateNewUser(){
 
         //Create registration Page object
-        regPage = new RegisterPage(this.driver);
+        regPage = new NavigateToRegisterPage(this.driver);
 
         //Enter a new email and click to create an account
         regPage.enterEmailToCreateNewUser("newemail@domain.com");
@@ -57,9 +55,23 @@ public class RegisterPageTest {
         newUser = new RegisterNewUserPage(this.driver);
 
         //Check the Mrs radio button for Title option
-        newUser.setTitleAsMrs();
+        newUser.setTitleAsMr();
 
-        boolean mrsFlag = driver.findElement(By.xpath("//*[@id=\"id_gender2\"]")).isSelected();
+        newUser.setFirstName("MyName");
+
+        newUser.setLastName("MyLastName");
+
+        String emailEntered = driver.findElement(By.xpath("//*[@id=\"email\"]")).getAttribute("value");
+
+        Assert.assertEquals("newemail@domain.com", emailEntered);
+
+        try{
+            Thread.sleep(5000);
+        }
+        catch (InterruptedException ignored){
+        }
+
+        boolean mrsFlag = driver.findElement(By.xpath("//*[@id=\"id_gender1\"]")).isSelected();
 
         //Check if the Mrs radio is selected
         Assert.assertTrue(mrsFlag);

@@ -5,14 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class RegisterPage {
+public class NavigateToRegisterPage {
 
     WebDriver driver;
 
     By emailField = By.xpath("//*[@id=\"email_create\"]");
 
 
-    public RegisterPage(WebDriver driver){
+    public NavigateToRegisterPage(WebDriver driver){
         this.driver = driver;
     }
 

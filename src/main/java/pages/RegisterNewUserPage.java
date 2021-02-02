@@ -21,6 +21,16 @@ public class RegisterNewUserPage {
         driver.findElement(titleRadioMrs).click();
     }
 
+    By firstNameX  = By.xpath("//*[@id=\"customer_firstname\"]");
+    public void setFirstName(String firstName) {
+        driver.findElement(firstNameX).sendKeys(firstName);
+    }
+
+    By lastNameX  = By.xpath("//*[@id=\"customer_lastname\"]");
+    public void setLastName(String lastName) {
+        driver.findElement(lastNameX).sendKeys(lastName);
+    }
+
 
 
 }
