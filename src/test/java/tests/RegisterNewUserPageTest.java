@@ -61,12 +61,20 @@ public class RegisterNewUserPageTest {
 
         newUser.setLastName("MyLastName");
 
+        newUser.setPassword("5char");
+
+        newUser.setBirthDay("15");
+
+        newUser.setBirthMonth("11");
+
+        newUser.setBirthYear("1991");
+
         String emailEntered = driver.findElement(By.xpath("//*[@id=\"email\"]")).getAttribute("value");
 
         Assert.assertEquals("newemail@domain.com", emailEntered);
 
         try{
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         }
         catch (InterruptedException ignored){
         }

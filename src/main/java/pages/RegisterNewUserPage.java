@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class RegisterNewUserPage {
 
@@ -29,6 +30,29 @@ public class RegisterNewUserPage {
     By lastNameX  = By.xpath("//*[@id=\"customer_lastname\"]");
     public void setLastName(String lastName) {
         driver.findElement(lastNameX).sendKeys(lastName);
+    }
+
+    By password  = By.xpath("//*[@id=\"passwd\"]");
+    public void setPassword(String pass) {
+        driver.findElement(password).sendKeys(pass);
+    }
+
+    By birthDay = By.xpath("//*[@id=\"days\"]");
+    public void setBirthDay (String day) {
+        Select bDay = new Select(driver.findElement(birthDay));
+        bDay.selectByValue(day);
+    }
+    //Use the numbers from 1 to 12 to slect the month
+    By birthMonth = By.xpath("//*[@id=\"months\"]");
+    public void setBirthMonth (String month) {
+        Select bMonth = new Select(driver.findElement(birthMonth));
+        bMonth.selectByValue(month);
+    }
+
+    By birthYear = By.xpath("//*[@id=\"years\"]");
+    public void setBirthYear (String year) {
+        Select bYear = new Select(driver.findElement(birthYear));
+        bYear.selectByValue(year);
     }
 
 
