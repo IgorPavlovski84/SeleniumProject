@@ -86,6 +86,6 @@ public class RegisterNewUserPageTest {
 
 
 
-
+// TODO IGOR
 
 }
