@@ -36,35 +36,16 @@ public class RegisterPageTest {
 
     @Test(priority=0)
 
-    public void testEnterEmailToCreateNewUser(){
+    public void testEnterEmailAndCreateNewUser(){
 
         //Create registration Page object
 
         regPage = new RegisterPage(driver);
 
+        //Enter a new email and click to create an account
         regPage.enterEmailToCreateNewUser("newemail@domain.com");
 
-
-
         Assert.assertEquals("Login - My Store", driver.getTitle());
-
-        //Verify login page title
-
-        //String loginPageTitle = objLogin.getLoginTitle();
-
-        //Assert.assertTrue(loginPageTitle.toLowerCase().contains("guru99 bank"));
-
-        //login to application
-
-        //objLogin.loginToGuru99("mgr123", "mgr!23");
-
-        // go the next page
-
-        //objHomePage = new Guru99HomePage(driver);
-
-        //Verify home page
-
-        //Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mgr123"));
 
     }
 
