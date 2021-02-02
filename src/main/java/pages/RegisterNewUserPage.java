@@ -55,6 +55,71 @@ public class RegisterNewUserPage {
         bYear.selectByValue(year);
     }
 
+    By newsletter = By.xpath("//*[@id=\"newsletter\"]");
+    public void setNewsletter () {
+        driver.findElement(newsletter).click();
+    }
+
+    By offers = By.xpath("//*[@id=\"optin\"]");
+    public void setOffers () {
+        driver.findElement(offers).click();
+    }
+
+    By company = By.xpath("//*[@id=\"company\"]");
+    public void setCompany(String myCompany) {
+        driver.findElement(company).sendKeys(myCompany);
+    }
+
+    By address1 = By.xpath("//*[@id=\"address1\"]");
+    public void setAddress1(String myAddress) {
+        driver.findElement(address1).sendKeys(myAddress);
+    }
+
+    By address2 = By.xpath("//*[@id=\"address2\"]");
+    public void setAddress2(String myAddress) {
+        driver.findElement(address2).sendKeys(myAddress);
+    }
+
+    By city = By.xpath("//*[@id=\"city\"]");
+    public void setCity(String myCity) {
+        driver.findElement(city).sendKeys(myCity);
+    }
+
+
+    By country = By.xpath("//*[@id=\"id_country\"]");
+    public void setCountry (String myCountry) {
+        Select countrySelector = new Select(driver.findElement(country));
+        countrySelector.selectByValue(myCountry);
+    }
+
+    By state = By.xpath("//*[@id=\"id_state\"]");
+    public void setState (String myState) {
+        Select stateSelector = new Select(driver.findElement(state));
+        stateSelector.selectByValue(myState);
+    }
+
+    By postalCodeX = By.xpath("//*[@id=\"postcode\"]");
+    public void setPostalCode(String postalCode) {
+        driver.findElement(postalCodeX).sendKeys(postalCode);
+    }
+
+    By additionalInfo = By.xpath("//*[@id=\"other\"]");
+    public void setAdditionalInfo(String additionalInformation) {
+        driver.findElement(additionalInfo).sendKeys(additionalInformation);
+    }
+
+    By homePhone = By.xpath("//*[@id=\"phone\"]");
+    public void setHomePhone(String homePhoneN) {
+        driver.findElement(homePhone).sendKeys(homePhoneN);
+    }
+
+    By mobilePhone = By.xpath("//*[@id=\"phone_mobile\"]");
+    public void setMobilePhone(String mobilePhoneN) {
+        driver.findElement(mobilePhone).sendKeys(mobilePhoneN);
+    }
+
+
+
 
 
 }

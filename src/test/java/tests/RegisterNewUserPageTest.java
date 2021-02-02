@@ -69,8 +69,33 @@ public class RegisterNewUserPageTest {
 
         newUser.setBirthYear("1991");
 
-        String emailEntered = driver.findElement(By.xpath("//*[@id=\"email\"]")).getAttribute("value");
+        newUser.setNewsletter();
 
+        newUser.setOffers();
+
+        newUser.setCompany(" My Company Name");
+
+        newUser.setAddress1("Main Street 123");
+
+        newUser.setAddress2("Additional address info");
+
+        newUser.setCity("My City");
+
+        newUser.setCountry("21");
+
+        newUser.setState("50");
+
+        newUser.setPostalCode("56445");
+
+        newUser.setAdditionalInfo("Some additional info to be added");
+
+        newUser.setHomePhone("004915125752526");
+        
+        newUser.setMobilePhone("004915125752527");
+
+
+
+        String emailEntered = driver.findElement(By.xpath("//*[@id=\"email\"]")).getAttribute("value");
         Assert.assertEquals("newemail@domain.com", emailEntered);
 
         try{
