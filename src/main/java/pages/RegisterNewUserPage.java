@@ -118,6 +118,16 @@ public class RegisterNewUserPage {
         driver.findElement(mobilePhone).sendKeys(mobilePhoneN);
     }
 
+    By addAlias = By.xpath("//*[@id=\"alias\"]");
+    public void setAddressAlias(String addressAlias) {
+        driver.findElement(addAlias).sendKeys(addressAlias);
+    }
+
+    By registetBtn = By.xpath("//*[@id=\"submitAccount\"]");
+    public void registerNewUser() {
+        driver.findElement(registetBtn).click();
+    }
+
 
 
 

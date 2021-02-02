@@ -90,24 +90,16 @@ public class RegisterNewUserPageTest {
         newUser.setAdditionalInfo("Some additional info to be added");
 
         newUser.setHomePhone("004915125752526");
-        
+
         newUser.setMobilePhone("004915125752527");
 
+        newUser.setAddressAlias("Alias for the address");
 
+        newUser.registerNewUser();
 
-        String emailEntered = driver.findElement(By.xpath("//*[@id=\"email\"]")).getAttribute("value");
-        Assert.assertEquals("newemail@domain.com", emailEntered);
+        String userName = driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a/span")).getText();
+        Assert.assertEquals("MyName MyLastName", userName);
 
-        try{
-            Thread.sleep(2000);
-        }
-        catch (InterruptedException ignored){
-        }
-
-        boolean mrsFlag = driver.findElement(By.xpath("//*[@id=\"id_gender1\"]")).isSelected();
-
-        //Check if the Mrs radio is selected
-        Assert.assertTrue(mrsFlag);
     }
 
     @AfterClass
