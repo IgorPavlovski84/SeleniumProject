@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.HomePage;
 import pages.RegisterNewUserPage;
 import pages.NavigateToRegisterPage;
 
@@ -15,13 +16,13 @@ import java.util.concurrent.TimeUnit;
 
 public class RegisterNewUserPageTest {
 
-    String pageURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
+    String pageURL = "http://automationpractice.com/index.php";
 
     WebDriver driver;
 
     NavigateToRegisterPage regPage;
-
     RegisterNewUserPage newUser;
+    HomePage homePage;
 
     @BeforeClass
     public void setup(){
@@ -34,6 +35,12 @@ public class RegisterNewUserPageTest {
 
         driver.get(pageURL);
 
+        homePage = new HomePage(this.driver);
+        homePage.clickToSignIn();
+
+
+
+
     }
 
     @Test(priority=0)
@@ -43,7 +50,8 @@ public class RegisterNewUserPageTest {
         regPage = new NavigateToRegisterPage(this.driver);
 
         //Enter a new email and click to create an account
-        regPage.enterEmailToCreateNewUser("newemail@domain.com");
+        regPage.enterEmailToCreateNewUser("newemail4@domain.com");
+
 
         Assert.assertEquals("Login - My Store", driver.getTitle());
     }

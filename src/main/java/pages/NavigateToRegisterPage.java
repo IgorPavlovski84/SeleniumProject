@@ -17,7 +17,6 @@ public class NavigateToRegisterPage {
     }
 
     //Enter email to create an new user
-
     public void enterEmailToCreateNewUser(String newEmail){
 
         driver.findElement(emailField).sendKeys(newEmail + Keys.ENTER);

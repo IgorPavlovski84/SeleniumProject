@@ -42,7 +42,7 @@ public class RegisterNewUserPage {
         Select bDay = new Select(driver.findElement(birthDay));
         bDay.selectByValue(day);
     }
-    //Use the numbers from 1 to 12 to slect the month
+    //Use the numbers from 1 to 12 to select the month
     By birthMonth = By.xpath("//*[@id=\"months\"]");
     public void setBirthMonth (String month) {
         Select bMonth = new Select(driver.findElement(birthMonth));
@@ -127,6 +127,8 @@ public class RegisterNewUserPage {
     public void registerNewUser() {
         driver.findElement(registetBtn).click();
     }
+
+    
 
 
 
