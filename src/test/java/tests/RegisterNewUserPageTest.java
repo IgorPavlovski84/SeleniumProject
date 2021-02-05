@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.RegisterNewUserPage;
-import pages.NavigateToRegisterPage;
+import pages.SignInSignUpPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +20,7 @@ public class RegisterNewUserPageTest {
 
     WebDriver driver;
 
-    NavigateToRegisterPage regPage;
+    SignInSignUpPage regPage;
     RegisterNewUserPage newUser;
     HomePage homePage;
 
@@ -44,7 +44,7 @@ public class RegisterNewUserPageTest {
     public void testEnterEmailToCreateNewUser(){
 
         //Create registration Page object
-        regPage = new NavigateToRegisterPage(this.driver);
+        regPage = new SignInSignUpPage(this.driver);
 
         //Enter a new email and click to create an account
         regPage.enterEmailToCreateNewUser("newemail5@domain.com");
