@@ -38,26 +38,23 @@ public class RegisterNewUserPageTest {
         homePage = new HomePage(this.driver);
         homePage.clickToSignIn();
 
-
-
-
     }
 
     @Test(priority=0)
-    public void testEnterEmailAndCreateNewUser(){
+    public void testEnterEmailToCreateNewUser(){
 
         //Create registration Page object
         regPage = new NavigateToRegisterPage(this.driver);
 
         //Enter a new email and click to create an account
-        regPage.enterEmailToCreateNewUser("newemail4@domain.com");
+        regPage.enterEmailToCreateNewUser("newemail5@domain.com");
 
 
         Assert.assertEquals("Login - My Store", driver.getTitle());
     }
 
     @Test(priority=1)
-    public void testRegisterNewUserPage () {
+    public void testRegisterNewUser () {
 
         newUser = new RegisterNewUserPage(this.driver);
         newUser.setTitleAsMr();
@@ -86,6 +83,8 @@ public class RegisterNewUserPageTest {
         Assert.assertEquals("MyName MyLastName", userName);
 
     }
+
+
 
     @AfterClass
     public void closeDriver() {
