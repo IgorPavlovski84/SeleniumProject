@@ -9,14 +9,14 @@ public class SignInSignUpPage {
 
     WebDriver driver;
 
-    By emailField = By.xpath("//*[@id=\"email_create\"]");
-
 
     public SignInSignUpPage(WebDriver driver){
         this.driver = driver;
     }
 
-    //Enter email to create an new user
+
+    //Enter email to create a new user
+    By emailField = By.xpath("//*[@id=\"email_create\"]");
     public void enterEmailToCreateNewUser(String newEmail){
         driver.findElement(emailField).sendKeys(newEmail + Keys.ENTER);
     }
@@ -39,6 +39,11 @@ public class SignInSignUpPage {
     By forgotPass = By.xpath("//*[@id=\"login_form\"]/div/p[1]/a");
     public void forgotPassword() {
         driver.findElement(forgotPass).click();
+    }
+
+    By signOut = By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a");
+    public void signOut() {
+        driver.findElement(signOut).click();
     }
 
 
